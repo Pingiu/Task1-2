@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Perspective_Task1PriceGroup::perspective" title="Task1PriceGroup" module="Perspective_Task1PriceGroup" sortOrder="51" resource="Perspective_Task1PriceGroup::perspective"/>
+        <add id="Perspective_Task1PriceGroup::perspective_configuration" title="Configuration" module="Perspective_Task1PriceGroup" sortOrder="99" parent="Perspective_Task1PriceGroup::perspective" action="adminhtml/system_config/edit/section/perspective" resource="Perspective_Task1PriceGroup::perspective"/>
+    </menu>
+</config>

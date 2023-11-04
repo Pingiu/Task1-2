@@ -1,0 +1,31 @@
+<?php
+/** @var \Perspective\Task1PriceGroup\Block\Template $block */
+$viewModel = $block->getViewModel();
+
+if ($viewModel->isModuleFunctionality())
+{
+    if ($viewModel->isBasePriceShow())
+    {
+        echo "<b>Base price:</b> ".$viewModel->getBasePrice()."</br>";
+    }
+    if ($viewModel->isFinalPriceShow())
+    {
+        echo "<b>Final price:</b> ".$viewModel->getFinalPrice()."</br>";
+    }
+    if ($viewModel->isSpecialPriceShow())
+    {
+        echo "<b>Special price:</b> ".$viewModel->getSpecialPrice()."</br>";
+    }
+    
+    if ($viewModel->isTierPriceShow())
+    {   
+        echo "<b>Tier price:</b>".$viewModel->getTierPrice()."</br>";
+    }
+    if ($viewModel->isCatalogRulePriceShow())
+    {
+        echo "<b>Catalog Rule price:</b> ".$viewModel->getCatalogRulePrice()."</br>";
+    }
+
+}
+?>
+

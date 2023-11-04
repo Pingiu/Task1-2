@@ -1,0 +1,32 @@
+<?php
+/** @var \Perspective\Task2Countdown\Block\Template $block */
+$viewModel = $block->getViewModel();
+$minAllTime = $viewModel->getMinEndTime();
+$ruleCollection = $viewModel->getCatalogPriceRuleCollection();
+echo "Special Price will end :".$minAllTime."<br>";
+echo "Early Catalog rule Price will end : ". reset($ruleCollection)->getToDate()."<br>";
+foreach ($ruleCollection as $ruleItem) {
+
+    echo $ruleItem->getId()." Catalog rule Price will end ".$ruleItem->getToDate()."<br>";
+
+}
+
+
+?>
+<b>Remaining tlme(from ajax):</b><br>
+
+<div style="display: inline-block; padding: 15px; font-size: 20px; border: 15px solid dodgerblue" id="getting-started"></div>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Perspective_Task2Countdown/js/jquery.countdown',
+    ],function ($){
+
+       $("#getting-started").countdown("<?= $viewModel->countdown(); ?>", function(event) {
+            $(this).text(
+                event.strftime('%D days %H:%M:%S')
+            );
+        }); 
+    })
+</script>
